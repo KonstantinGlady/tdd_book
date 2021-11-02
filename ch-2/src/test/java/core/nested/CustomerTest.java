@@ -1,0 +1,41 @@
+package core.nested;
+
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class CustomerTest {
+    private static final String FIRST_NAME = "John";
+    private static final String LAST_NAME = "Smith";
+
+    @Nested
+    class TestBuilder {
+        private String MIDDLE_NAME = "Michael";
+
+        @Test
+        public void testCustomer() throws ParseException {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyy");
+            Date customerDate = simpleDateFormat.parse("11-22-2020");
+
+            Customer customer = new Customer.Builder(Gender.MALE, FIRST_NAME, LAST_NAME)
+                    .withMiddleName(MIDDLE_NAME)
+                    .withBecomeCustomer(customerDate)
+                    .build();
+
+            assertAll(() -> {
+                assertEquals(Gender.MALE, customer.getGender());
+                assertEquals(FIRST_NAME, customer.getFirstName());
+                assertEquals(LAST_NAME, customer.getLastName());
+                assertEquals(MIDDLE_NAME, customer.getMiddleName());
+                assertEquals(customerDate, customer.getBecomeCustomer());
+            });
+        }
+
+    }
+
+}

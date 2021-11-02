@@ -10,6 +10,7 @@ class CalculatorTest {
     void add() {
         Calculator calculator = new Calculator();
         double result = calculator.add(3, 5);
-        assertEquals(8, result);
+        double expected = 8;
+        assertEquals(expected, result,0);
     }
 }
