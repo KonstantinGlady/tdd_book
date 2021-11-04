@@ -12,6 +12,8 @@
         <module>ch-1</module>
         <module>ch-2</module>
         <module>ch7-stubs</module>
+        <module>ch-7</module>
+        <module>ch8-mock</module>
     </modules>
     <dependencies>
         <dependency>
