@@ -24,6 +24,7 @@ class TestAccountServiceEasyMock {
         mockAccountManager.updateAccount(sender);
         mockAccountManager.updateAccount(beneficiary);
 
+        //настраиваем возвращение аккаунтов при обращению к моку через вызов комманды findAccountF...
         expect(mockAccountManager.findAccountForUser("1")).andReturn(sender);
         expect(mockAccountManager.findAccountForUser("2")).andReturn(beneficiary);
         replay(mockAccountManager);//после подготовки мока запукаем этой командой
