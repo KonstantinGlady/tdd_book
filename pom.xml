@@ -13,6 +13,8 @@
         <module>ch2</module>
         <module>ch7</module>
         <module>ch8</module>
+        <module>ch20/ch20-tdd</module>
+        <module>ch20/ch20-refactoring1</module>
     </modules>
     <dependencies>
         <dependency>
